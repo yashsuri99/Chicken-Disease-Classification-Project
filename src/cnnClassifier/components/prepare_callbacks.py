@@ -1,6 +1,6 @@
 import os
-from src.cnnClassifier.utils.common import create_directories
-from src.cnnClassifier.entity.config_entity import PrepareCallbacksConfig
+from cnnClassifier.utils.common import create_directories
+from cnnClassifier.entity.config_entity import PrepareCallbacksConfig
 import tensorflow as tf
 import time
 

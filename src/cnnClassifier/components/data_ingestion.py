@@ -2,9 +2,9 @@ import os
 from pathlib import Path
 import urllib.request as request
 import zipfile
-from src.cnnClassifier import logger
-from src.cnnClassifier.entity.config_entity import DataIngestionConfig
-from src.cnnClassifier.utils.common import get_size
+from cnnClassifier import logger
+from cnnClassifier.entity.config_entity import DataIngestionConfig
+from cnnClassifier.utils.common import get_size
 
 
 class DataIngestion:

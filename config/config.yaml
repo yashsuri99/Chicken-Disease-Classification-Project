@@ -21,7 +21,7 @@ training:
   trained_model_path: artifacts/training/model.h5
 
 params:
-  EPOCHS: 4
+  EPOCHS: 10
   BATCH_SIZE: 16
   AUGMENTATION: True
   IMAGE_SIZE: [224, 224, 3]
