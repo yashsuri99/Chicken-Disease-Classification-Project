@@ -1,4 +1,5 @@
 import os
+from src.cnnClassifier.utils.common import create_directories
 from src.cnnClassifier.entity.config_entity import PrepareCallbacksConfig
 import tensorflow as tf
 import time
@@ -25,9 +26,16 @@ class PrepareCallback:
         )
 
     def get_tb_ckpt_callbacks(self):
+        timestamp = time.strftime("%Y-%m-%d-%H-%M-%S")
+        tb_running_log_dir = os.path.join(
+            str(self.config.tensorboard_root_log_dir),
+            f"tb_logs_at_{timestamp}"
+        )
+
+        create_directories([tb_running_log_dir])
+
         return [
-            tf.keras.callbacks.TensorBoard(
-                log_dir=str(self._create_tb_callbacks)),
+            tf.keras.callbacks.TensorBoard(log_dir=tb_running_log_dir),
             tf.keras.callbacks.ModelCheckpoint(
-                filepath=str(self._create_ckpt_callbacks))
+                filepath=str(self.config.checkpoint_model_filepath))
         ]
